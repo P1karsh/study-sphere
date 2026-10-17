@@ -2,9 +2,9 @@ from logging.config import fileConfig
 
 from alembic import context
 
-from app import models  # noqa: F401  (registers the tables on Base.metadata)
-from app.config import get_settings
-from app.database import Base, make_engine
+import app.models  # noqa: F401  (registers the tables on Base.metadata)
+from app.core.config import get_settings
+from app.db.database import Base, make_engine
 
 config = context.config
 if config.config_file_name is not None:
